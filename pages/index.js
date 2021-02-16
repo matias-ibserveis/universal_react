@@ -1,4 +1,11 @@
 
+// OJO:  
+// npm install @material-ui/core   
+// npm i @material/typography
+
+// instalar fuentes:
+// npm install fontsource-roboto
+
 import Link from 'next/link'
 
 const Index = () => (
@@ -11,28 +18,9 @@ const Index = () => (
 
     <p>Welcome to the home page</p>
 
-
-    <style jsx>{`
-        a {
-         color: blue;
-         text-decoration: underline;
-        }
-    `}
-    </style>
-    <style global jsx>{`
-      a {
-        color: red;
-        margin: 0;
-        font-size: 110%;
-        background: #f0f0f0;
-      }
-    `}</style>
-
-  </div>
-
+   </div>
   
 )
-
 
 
 export default Index
