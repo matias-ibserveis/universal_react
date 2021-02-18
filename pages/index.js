@@ -1,13 +1,14 @@
 
-import Link from 'next/link'
+//import Link from 'next/link'
+
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
-import Mi_navbar from './components/comp_navbar1.js'
+import Mi_Link from './components/mi_Link.js'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  contenedor: {
     flexGrow: 1,
   },
   paper: {
@@ -19,21 +20,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CenteredGrid() {
   const classes = useStyles();
-  const texto_inicial= "Empresa ibserveis"
 
   return (
-  <div className={classes.root}>
-    <Grid container spacing={1}>
-    
-    <Grid item xs={12}>
-        <Mi_navbar texto_barra ={texto_inicial}/>
-    </Grid>
+  <div>
+
+    <Grid container spacing={2}>
       <Grid item xs={6}>
         <Paper className={classes.paper}>
           <h1>Home</h1>
-          <Link href="/about">
-            <a>Go to about</a>
-          </Link>
+          <Mi_Link  enlace='about' texto=' go to about'>
+          </Mi_Link>
           <p>Welcome to the home page</p>
         </Paper>
       </Grid>
@@ -44,7 +40,8 @@ export default function CenteredGrid() {
         </Paper>
       </Grid>
 
-    </Grid>
+      </Grid>
+
   </div>
   );
 }

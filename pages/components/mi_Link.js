@@ -12,10 +12,10 @@ const useStyles = makeStyles({
   enlace: {
     color: 'green',
     fontFamily: 'times new roman',
-    textDecoration: 'underline',
     fontSize: '1.5rem',
     '&:hover': {
-      color: 'red',
+      color: 'blue',
+      textDecoration: 'underline'
     },
   }
 })

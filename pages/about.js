@@ -1,6 +1,7 @@
 
-import Mi_Link from '../components/Mi_Link.js'
+import Mi_Link from './components/mi_Link'
 import { makeStyles } from "@material-ui/core/styles"
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles({
    media: {
@@ -17,6 +18,9 @@ const About = () => {
 
   return (
   <div>
+
+<Grid container spacing={2}>
+  <Grid item xs={12}>
     <h1>About</h1>
 
     <Mi_Link 
@@ -27,6 +31,10 @@ const About = () => {
 
     <p>A Javascript programmer</p>
     <img  src="imagenes/javascript-logo.png" alt="logo"  className={classes.media} / >
+  
+  </Grid>
+
+  </Grid>
   </div>
 )
   }
