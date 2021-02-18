@@ -10,7 +10,7 @@ const About = () => (
       <a>Go to Home</a>
     </Link>
     <p>A Javascript programmer</p>
-    <img src="imagenes/javascript-logo.png" alt="logo" height="200px" />
+    <img src="javascript-logo.png" alt="logo" height="200px" />
   </Layout>
 )
 
