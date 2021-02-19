@@ -1,5 +1,5 @@
 
-import Mi_Link from './components/mi_Link'
+import Mi_ficha from './components/comp_ficha.js'
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from '@material-ui/core/Grid'
 
@@ -19,20 +19,26 @@ const About = () => {
   return (
   <div>
 
-<Grid container spacing={2}>
-  <Grid item xs={12}>
-    <h1>About</h1>
+  <Grid container spacing={2}>
+        
+    <Mi_ficha 
+      tituloDato='ABOUT'
+      enlaceDato={enlace_home}
+      textoenlaceDato={texto_home}
+      descripcionDato='Información de empresa'
+    />
 
-    <Mi_Link 
-      enlace={enlace_home}
-      texto={texto_home} 
-    >
-    </Mi_Link>
-
-    <p>A Javascript programmer</p>
-    <img  src="imagenes/javascript-logo.png" alt="logo"  className={classes.media} / >
-  
-  </Grid>
+    <Mi_ficha 
+      tituloDato='enlaces'
+      enlaceDato=''
+      textoenlaceDato=''
+      descripcionDato='otros enlaces'
+      />
+    
+    <Grid item item xs={12} >
+      <p>A Javascript programmer</p>
+      <img  src="imagenes/javascript-logo.png" alt="logo"  className={classes.media} / >
+    </Grid>
 
   </Grid>
   </div>

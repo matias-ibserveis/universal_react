@@ -1,47 +1,35 @@
 
-//import Link from 'next/link'
+import Mi_ficha from './components/comp_ficha.js'
+import { Fragment } from 'react';
 
-import { makeStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
-
-import Mi_Link from './components/mi_Link.js'
-
-const useStyles = makeStyles((theme) => ({
-  contenedor: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
-
-export default function CenteredGrid() {
-  const classes = useStyles();
-
+const index_principal = () => {
   return (
-  <div>
+  
+    <Fragment>
 
-    <Grid container spacing={2}>
-      <Grid item xs={6}>
-        <Paper className={classes.paper}>
-          <h1>Home</h1>
-          <Mi_Link  enlace='about' texto=' go to about'>
-          </Mi_Link>
-          <p>Welcome to the home page</p>
-        </Paper>
-      </Grid>
+      <Mi_ficha 
+        tituloDato='HOME'
+        enlaceDato='about'
+        textoenlaceDato='go to about'
+        descripcionDato='wellcome to the home page'
+      />
 
-      <Grid item xs={6}>
-        <Paper className={classes.paper}>
-          <p>Información de empresa</p>
-        </Paper>
-      </Grid>
+      <Mi_ficha 
+        tituloDato='más información'
+        enlaceDato=''
+        textoenlaceDato=''
+        descripcionDato='Información de empresa'
+      />
 
-      </Grid>
+      <Mi_ficha 
+        tituloDato='Noticia'
+        enlaceDato=''
+        textoenlaceDato=''
+        descripcionDato='nuevo curso disponible'
+      />
 
-  </div>
+     </Fragment>
   );
 }
+
+export default index_principal

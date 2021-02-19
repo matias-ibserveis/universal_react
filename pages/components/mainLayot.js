@@ -1,14 +1,17 @@
 
-//import Link from 'next/link'
+// FlexBox : https://material-ui.com/system/flexbox/
 
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 import Mi_navbar from  './comp_navbar1'
+import { Fragment } from 'react';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+  contenedor: {
+    //flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
@@ -22,20 +25,17 @@ const MainLayout = ({ children }) => {
   const texto_inicial= "Empresa ibserveis"
 
   return (
-  <div className={classes.root}>
-       
+    <Fragment>
 
+    <Grid container  className={classes.contenedor}>
+      <Grid  item xs={12}>
+          <Mi_navbar texto_barra ={texto_inicial}/>
+      </Grid>
+
+        {children}
     
-    <Grid item xs={12}>
-        <Mi_navbar texto_barra ={texto_inicial}/>
     </Grid>
-
-      {children}
-
- 
-  
-  
-  </div>
+    </Fragment>
   );
   }
 
