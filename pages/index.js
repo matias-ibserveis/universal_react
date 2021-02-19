@@ -36,7 +36,7 @@ export default function CenteredGrid() {
 
       <Grid item xs={6}>
         <Paper className={classes.paper}>
-          <p>Espacio para más info</p>
+          <p>Información de empresa</p>
         </Paper>
       </Grid>
 
