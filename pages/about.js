@@ -1,16 +1,31 @@
 
-import Link from 'next/link'
-import Layout from "./components/Layout"
+// npm i isomorphic-unfetch
 
-const About = () => (
-  <Layout>
-    <h1>About</h1>
-    <Link href="/">
-      <a>Go to Home</a>
-    </Link>
-    <p>A Javascript programmer</p>
-    <img src="javascript-logo.png" alt="logo" height="200px" />
-  </Layout>
-)
+import Layout from "./components/Layout";
+import fetch from "isomorphic-unfetch";
+import Error from "./_error";
 
-export default About
+export default function About(props) {
+
+    const { user, statusCode } = props
+    if (statusCode) {
+      return <Error statusCode={statusCode} />;
+    }
+
+    return (
+      <Layout title="About">
+        <p>{user.name}</p>
+        <img src={user.avatar_url} alt="Reed" height="200px" />
+      </Layout>
+    );
+}
+
+About.getInitialProps = async () => {
+  const response = await fetch("https://api.github.com/users/reedbarger")
+  const statusCode = response.status > 200 ? response.status : false
+  const data = await response.json()
+  return { user: data, statusCode };
+}
+
+
+
